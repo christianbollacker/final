@@ -7,7 +7,9 @@ $(function() {
     generator(10);
   });
 
-
+  $('#sort').on('click', function() {
+    sort();
+  });
 
 
 
@@ -33,7 +35,7 @@ $(function() {
   for(var i = 1; i < length; ++i) {
     var temp = $('.item:nth-child(' + i + ')').text();
     var j = $('.item:nth-child(' + i - 1 ')').text();
-    for(; j >= 0 && values[j] > temp; --j) {
+    for(; j >= 0 && $('.item:nth-child(' + j + ')').text() > temp; --j) {
       values[j+1] = values[j];
     }
     values[j+1] = temp;
