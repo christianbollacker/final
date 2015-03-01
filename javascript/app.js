@@ -30,10 +30,9 @@ $(function() {
   function sort() {
     var toSort = $('.sortTable')
     var length = toSort.length;
-    var i = $('.item:nth-child()')
   for(var i = 1; i < length; ++i) {
-    var temp = $('.item:nth-child(' + i + ')');
-    var j = $('.item:nth-child(i - 1)');
+    var temp = $('.item:nth-child(' + i + ')').text();
+    var j = $('.item:nth-child(' + i - 1 ')').text();
     for(; j >= 0 && values[j] > temp; --j) {
       values[j+1] = values[j];
     }
@@ -42,6 +41,4 @@ $(function() {
 };
 
 })
-
-
 
