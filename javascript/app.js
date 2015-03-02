@@ -3,7 +3,7 @@ $(function() {
   $('#sort').hide();
 
   $('#submit').on('click', function() {
-    userBlocks = ($('input').val());
+    userBlocks = parseInt ($('#userChoice').text());
     $('#userNumber').fadeOut('fast');
     $('#tenNumbers').slideDown('slow');
   });
@@ -11,7 +11,7 @@ $(function() {
   $('#tenNumbers').on('click', function() {
     $('#tenNumbers').fadeOut('fast');
     $('#sort').slideDown('slow');
-    generator(choice());
+    generator(10);
   });
 
   $('#sort').on('click', function() {
@@ -21,14 +21,6 @@ $(function() {
 
 
   var userBlocks = 10;
-
-
-
-
-  function choice () {
-    return (parseInt(userBlocks));
-  }
-
 
   function Item() {
       this.value = (Math.floor(Math.random() * 100));
