@@ -230,7 +230,6 @@ th {
 body {
   background-image: -webkit-linear-gradient(bottom, #FFFFFF, #f6f6f6);
   font-family: verdana;
-
   margin-bottom: 0px; 
 }
 
@@ -238,9 +237,9 @@ header {
   margin top: 0px;
   position: fixed;
   display: block;
+  padding-top: 0px;
   z-index: 1;
   background-color: #9DA5A8;
-  /*background-color: #67FF7F;*/
   width: 100%;
   height: 40px;
 }
@@ -248,7 +247,7 @@ header h1 {
   font-family: verdana;
   font-size: 18pt;
   text-align: center;
-  margin-top: -18px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -276,21 +275,35 @@ main {
   margin-left: 10px;
   width: 30px;
   min-height: 30px;
+  padding-top: 5px;
   display: inline-block;
   text-align: center;
   font-color: #bbb9b9;
   background-color: #fefefe;
 }
 
-#tenNumbers #sort {
+.control {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  padding: 20px;
+  width: 960px;
+  min-height: 100px;
+  text-align: center;
+  background-color: #f6f6f6;
+  border-radius: 2px;
+}
+
+#tenNumbers #sort #sortup #sortdown{
   width: 250px;
   height: 40px;
   text-align: center;
   padding-bottom: 5px;
-  margin-left: 355px;
-  margin-bottom: 10px;U
+  margin-top: 10px;
+  margin-left: auto;
+  margin right: auto;
   border-width: 2px solid black;
   border-radius: 2px;
-
 }
 
