@@ -2,11 +2,10 @@ $(function() {
   $('#tenNumbers').hide();
   $('#sort').hide();
 
-  $('form:last').submit(function (event) {
-    userBlocks = ($('form:first').text());
-    return;
-    $('.input').fadeOut('fast');
-    $('tenNumbers').slideDown('slow');
+  $('#submit').on('click', function() {
+    userBlocks = ($('input').val());
+    $('#userNumber').fadeOut('fast');
+    $('#tenNumbers').slideDown('slow');
   });
 
   $('#tenNumbers').on('click', function() {
@@ -48,12 +47,11 @@ $(function() {
   }
 
   function sort() {
-   var toSort = $('.sortTable div');
-
-   toSort.sort(function (a, b) {
-     a = parseInt($(a).text());
-     b = parseInt($(b).text());
-     return b - a;
+    var toSort = $('.sortTable div');
+    toSort.sort(function (a, b) {
+      a = parseInt($(a).text());
+      b = parseInt($(b).text());
+      return b - a;
    });
    $('.sortTable').html(toSort);
   }
