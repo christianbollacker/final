@@ -1,16 +1,34 @@
 $(function() {
+  $('#tenNumbers').hide();
   $('#sort').hide();
+
+  $('form:last').submit(function (event) {
+    userBlocks = ($('form:first').text());
+    return;
+    $('.input').fadeOut('fast');
+    $('tenNumbers').slideDown('slow');
+  });
 
   $('#tenNumbers').on('click', function() {
     $('#tenNumbers').fadeOut('fast');
     $('#sort').slideDown('slow');
-    generator(10);
+    generator(choice());
   });
 
   $('#sort').on('click', function() {
     sort();
   });
 
+
+
+  var userBlocks = 10;
+
+
+
+
+  function choice () {
+    return (parseInt(userBlocks));
+  }
 
 
   function Item() {
@@ -30,17 +48,15 @@ $(function() {
   }
 
   function sort() {
-    var toSort = $('.sortTable')
-    var length = toSort.length;
-  for(var i = 1; i < length; ++i) {
-    var temp = $('.item:nth-child(' + i + ')').text();
-    var j = $('.item:nth-child(' + i - 1 ')').text();
-    for(; j >= 0 && $('.item:nth-child(' + j + ')').text() > temp; --j) {
-      values[j+1] = values[j];
-    }
-    values[j+1] = temp;
+   var toSort = $('.sortTable div');
+
+   toSort.sort(function (a, b) {
+     a = parseInt($(a).text());
+     b = parseInt($(b).text());
+     return b - a;
+   });
+   $('.sortTable').html(toSort);
   }
-};
 
 })
 
