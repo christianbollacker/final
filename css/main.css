@@ -265,7 +265,7 @@ main {
   margin-right: auto;
   margin-bottom: 10px;
   width: 960px;
-  height: 440px;
+  min-height: 440px;
   text-align: center;
   background-color: #f6f6f6;
   border-radius: 2px;

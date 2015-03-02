@@ -3,7 +3,7 @@ $(function() {
   $('#sort').hide();
 
   $('#submit').on('click', function() {
-    userBlocks = parseInt ($('#userChoice').text());
+    userBlocks = parseInt ($('#userChoice').val());
     $('#userNumber').fadeOut('fast');
     $('#tenNumbers').slideDown('slow');
   });
@@ -11,7 +11,7 @@ $(function() {
   $('#tenNumbers').on('click', function() {
     $('#tenNumbers').fadeOut('fast');
     $('#sort').slideDown('slow');
-    generator(10);
+    generator(userBlocks);
   });
 
   $('#sort').on('click', function() {
@@ -23,19 +23,17 @@ $(function() {
   var userBlocks = 10;
 
   function Item() {
-      this.value = (Math.floor(Math.random() * 100));
-      this.toHTML = function() {
-        return ("<div class='item'>" + this.value + "</div>");
-
-      }
+    this.value = (Math.floor(Math.random() * 100));
+    this.toHTML = function() {
+      return ("<div class='item'>" + this.value + "</div>");
     }
-
+  }
 
   function generator(num) {
-      for (var i = num; i > 0; i--) {
-        var item = new Item();
-        $('.sortTable').append(item.toHTML());
-      }
+    for (var i = num; i > 0; i--) {
+      var item = new Item();
+      $('.sortTable').append(item.toHTML());
+    }
   }
 
   function sort() {
